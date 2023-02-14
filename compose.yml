@@ -1,0 +1,18 @@
+services:
+  app:
+    image: rocker/tidyverse:devel
+    ports:
+      - "8787:8787"
+    environment:
+      - USERID
+      - GROUPID
+      - PASSWORD
+      - TZ
+      - DISABLE_AUTH
+    volumes:
+      - type: bind
+        source: ./
+        target: /home/rstudio/app
+      - type: bind
+        source: .rstudio_config/
+        target: /home/rstudio/.config/rstudio
