@@ -1,20 +1,19 @@
-# TidyVerseDockerTemplate
+# TidyVerse Docker Template
 
 This is a TidyVerse Docker Template.  
-It's to specified in `.env` file.  
-Also, this directory bind to volumes.  
+The container is bind on specified a local machine user by `.env` file.  
+Also, this directory bind mount to volumes.  
 
-Base Images:
-
-* <https://hub.docker.com/r/rocker/tidyverse>
-
-## How to use
+## Usage
 
 ```sh
+git clone $REPO_URL
+cd TidyVerseDockerTemplate
 cp .env.sample .env
 # Specify your environments
 vi .env
-docker-compose build
-docker-compose up -d
-docker-compose down
+docker compose build
+docker compose up -d
+docker compose exec app sh
+docker compose down
 ```
